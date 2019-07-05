@@ -58,18 +58,6 @@ EOF
                 ->setHeartCount($this->faker->numberBetween(5, 100))
                 ->setImageFilename($this->faker->randomElement(self::$articleImages))
             ;
-
-            $comment1 = new Comment();
-            $comment1->setAuthorName('Mike Foster');
-            $comment1->setContent('Super comment! Love it!');
-            $comment1->setArticle($article);
-            $manager->persist($comment1);
-
-            $comment2 = new Comment();
-            $comment2->setAuthorName('Mike Ferengi');
-            $comment2->setContent('Woohoo! I\'m going on an all-asteroid diet!');
-            $comment2->setArticle($article);
-            $manager->persist($comment2);
         });
 
         $manager->flush();
